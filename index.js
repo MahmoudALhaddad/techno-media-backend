@@ -11,7 +11,13 @@ const db = new pg.Client({
 });
 
 
-db.connect();
+db.connect(err => {
+  if (err) {
+    console.error('Database connection error:', err.stack);
+  } else {
+    console.log('Database connected');
+  }
+});
 
 app.get("/",(req,res)=>{
     res.status(200).send("the server is running")
