@@ -5,14 +5,11 @@ const port = 3000;
 
 app.use(express.json());
 
-
 const db = new pg.Client({
-    user:'postgres',
-    database:'technoMedia',
-    host:"localhost",
-    password:"admin",
-    port:5432
-})
+  connectionString: process.env.DATABASE_URL || "postgresql://technomedia_user:H8OfhJCryXZ3PpL9HnFyNxjKgRVuAdvF@dpg-d1u0gkqdbo4c73e33sfg-a/technomedia",
+  ssl: { rejectUnauthorized: false }
+});
+
 
 db.connect();
 
