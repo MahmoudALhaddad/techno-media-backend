@@ -1,9 +1,15 @@
 import express from "express";
 import pg from "pg";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "..", "frontend")));
 
 const db = new pg.Client({
   connectionString: process.env.DATABASE_URL || 
@@ -20,10 +26,11 @@ db.connect(err => {
   }
 });
 
-app.get("/",(req,res)=>{
-    res.status(200).send("the server is running")
-});
 
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "frontend", "pages", "index.html"));
+});
 app.post("/userRegister", async(req,res)=>{
     try {
         const { email, password, fname, lname } = req.body;
