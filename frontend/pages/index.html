@@ -1,11 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تكنو ميديا</title>
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="./css/chat-home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-    <h1>Houda</h1>
+
+  <!-- ✅ القائمة الجانبية -->
+  <button id="menuToggle" class="menu-toggle">☰</button>
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeSidebar">✖</button>
+    <h3>القائمة</h3>
+    <a href="#intro">الرئيسية</a>
+    <a href="#portfolio">الأعمال</a>
+    <a href="#packages">الباقات</a>
+    <a href="#services">الخدمات</a>
+    <a href="#stats">الإحصائيات</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="/login.html">تسجيل الدخول</a>
+  </div>
+
+  <!-- ✅ المقدمة -->
+  <section class="intro" id="intro">
+    <video autoplay muted loop playsinline>
+      <source src="./vedios/start.mp4" type="video/mp4" />
+    </video>
+    <div class="intro-content">
+      <img src="./images/logo.jpeg" alt="الشعار" class="logo" />
+      <h1>مرحباً بك في تكنو ميديا</h1>
+      <p>منصة متخصصة في تقديم خدمات التصميم، البرمجة، والمونتاج بأعلى جودة واحترافية</p>
+      <button id="startNow" class="btn">ابدأ الآن</button>
+    </div>
+  </section>
+
+  <!-- ✅ معرض الأعمال -->
+  <section id="portfolio" data-scroll>
+    <h2 class="section-title">معرض أعمالنا</h2>
+    <div class="manual-slider">
+      <div class="manual-track">
+        <img src="./images/card.jpeg" alt="عمل 1">
+        <img src="./images/card1.jpeg" alt="عمل 2">
+        <video controls controlsList="nodownload">
+          <source src="./vedios/start.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ الخدمات -->
+  <section id="services" data-scroll class="services" id="services">
+    <h2 class="section-title">خدماتنا</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <div class="icon">🎨</div>
+        <h3>تصميم جرافيك</h3>
+        <p>تصميم شعارات، هويات بصرية، منشورات احترافية.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">💻</div>
+        <h3>برمجة مواقع</h3>
+        <p>مواقع متجاوبة، لوحات تحكم، واجهات مستخدم حديثة.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🎬</div>
+        <h3>مونتاج فيديو</h3>
+        <p>مونتاج احترافي، مؤثرات بصرية، فيديوهات إعلانية.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ الباقات -->
+  <section class="packages" id="packages" data-scroll id="packages" data-scroll>
+    <h2 class="section-title">اختر خطتك</h2>
+    <div class="packages-scroll"><div class="packages-track">
+  
+      <!-- Basic Plan -->
+      <div class="package-card" data-type="once">
+        <img src="images/package1.jpg" alt="Basic Plan">
+        <h3 class="plan-title">الباقة الأساسية</h3>
+        <p class="plan-desc">مناسبة للمبتدئين</p>
+        <div class="plan-price">50$</div>
+        <ul class="features-list">
+          <li>✅ طلب واحد</li>
+          <li>✅ دعم فني</li>
+          <li>✅ تسليم خلال 24 ساعة</li>
+        </ul>
+        <button class="subscribe-btn">اشترك الآن</button>
+      </div>
+  
+      <!-- Premium Plan -->
+      <div class="package-card highlight" data-type="monthly">
+        <div class="ribbon">خصم 40%</div>
+        <img src="images/package2.jpg" alt="Premium Plan">
+        <h3 class="plan-title">الباقة المميزة</h3>
+        <p class="plan-desc">الأكثر طلبًا</p>
+        <div class="plan-price">
+          <span class="old-price">100$</span>
+          <span class="new-price">60$</span>
+        </div>
+        <ul class="features-list">
+          <li>✅ تصميم احترافي</li>
+          <li>✅ 5 طلبات</li>
+          <li>✅ دعم مستمر</li>
+          <li>✅ استشارات مجانية</li>
+        </ul>
+        <button class="subscribe-btn">اشترك الآن</button>
+      </div>
+  
+      <!-- Monthly Plan -->
+      <div class="package-card" data-type="monthly">
+        <img src="images/package3.jpg" alt="Monthly Plan">
+        <h3 class="plan-title">الباقة الشهرية</h3>
+        <p class="plan-desc">للاستخدام المتكرر</p>
+        <div class="plan-price">90$</div>
+        <ul class="features-list">
+          <li>✅ عدد غير محدود من الطلبات</li>
+          <li>✅ تقارير شهرية</li>
+          <li>✅ أولوية في الدعم</li>
+        </ul>
+        <button class="subscribe-btn">اشترك الآن</button>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  
+
+  <!-- ✅ الإحصائيات -->
+  <section class="stats" id="stats">
+    <div class="stat-box"><h3>500+</h3><p>طلب مكتمل</p></div>
+    <div class="stat-box"><h3>300+</h3><p>عميل سعيد</p></div>
+    <div class="stat-box"><h3>5 سنوات</h3><p>خبرة</p></div>
+  </section>
+
+ 
+
+ <!-- زر الدردشة -->
+ <button id="chat-toggle"><i class="fas fa-comments"></i></button>
+
+
+  <section class="faq-section">
+    <h2 class="section-title">الأسئلة الشائعة</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">ما هي طريقة الدفع المتاحة؟</button>
+        <div class="faq-answer">ندعم الدفع بواسطة البطاقات البنكية، Apple Pay و Google Pay.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">هل يمكنني إلغاء الاشتراك؟</button>
+        <div class="faq-answer">نعم، يمكنك إلغاء الاشتراك في أي وقت من خلال لوحة التحكم.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">كيف أتواصل مع الدعم الفني؟</button>
+        <div class="faq-answer">يمكنك التواصل معنا عبر زر الدردشة أو صفحة "تواصل معنا".</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-contact">
+        <div class="social-icons">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="phone">
+           
+          <span dir="ltr">+962 785210235</span>
+          <i class="fas fa-phone-alt" ></i>
+        </p>
+        
+        <p>© <span id="year"></span> Techno Media jo. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ✅ مودال الدفع الحديث -->
+  <div id="subscriptionModal" class="subscription-modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">×</span>
+      <h3 id="modalTitle">الاشتراك في الباقة</h3>
+      <p id="modalDescription">مميزات الباقة هنا...</p>
+      <p id="modalPrice">السعر: --</p>
+
+      <div id="monthlyOptions" class="payment-section">
+        <label>مدة الاشتراك:</label>
+        <select id="planDuration">
+          <option value="شهري">شهري</option>
+          <option value="سنوي">سنوي (خصم 20%)</option>
+        </select>
+      </div>
+
+      <div class="payment-section">
+        <label>طريقة الدفع:</label>
+        <select>
+          <option>بطاقة ائتمان</option>
+        </select>
+      </div>
+
+      <!-- 💳 البطاقة -->
+      <div class="card-container">
+        <div class="credit-card" id="creditCard">
+          <div class="front">
+            <div class="logo">Mastercard</div>
+            <div class="chip"></div>
+            <div class="number" id="cardNumber">•••• •••• •••• ••••</div>
+            <div class="details">
+              <span id="cardHolder">اسم البطاقة</span>
+              <span id="cardExpiry">MM/YY</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="strip"></div>
+            <div class="cvv">CVV: <span id="cardCvv">•••</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 📋 نموذج الدفع -->
+      <form id="paymentForm">
+        <input type="text" id="inputCardNumber" placeholder="رقم البطاقة" maxlength="19" required />
+        <input type="text" id="inputCardHolder" placeholder="الاسم على البطاقة" required />
+        <input type="text" id="inputExpiry" placeholder="MM/YY" maxlength="5" required />
+        <input type="text" id="inputCvv" placeholder="CVV" maxlength="3" required />
+        <button type="submit" id="confirmBtn" class="confirm-btn" disabled>تأكيد الدفع</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- نافذة الدردشة -->
+  <div class="chat-window hidden">
+    <div class="chat-header">
+      <div class="agent-info">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="agent">
+        <span>دعم Techno Media</span>
+      </div>
+      <button id="close-chat">×</button>
+    </div>
+    <div class="chat-body" id="chat-body">
+      <div class="message support">
+        <span class="sender">الدعم:</span>
+        <span class="time">الآن</span>
+        👋 مرحبًا! كيف يمكنني مساعدتك؟
+      </div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="chat-input" placeholder="اكتب رسالتك...">
+      <button id="send-btn" disabled><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <audio id="send-sound" src="./assets/761175__artninja__light_whoosh_sound_01_06182024.wav"></audio>
+  <audio id="receive-sound" src="./assets/740423__anthonyrox__message-notification-4.wav"></audio>
+
+  <script src="./js/script-final.js"></script>
+  <script src="./js/chat-home.js"></script>
+
+
+
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('[data-scroll]').forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  });
+
+  // تفعيل سؤال واحد فقط بالأسئلة الشائعة
+  document.querySelectorAll('.faq-item .question').forEach(q => {
+    q.addEventListener('click', () => {
+      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+      q.parentElement.classList.add('active');
+    });
+  });
+</script>
+
 </body>
 </html>
