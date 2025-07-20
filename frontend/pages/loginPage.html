@@ -70,15 +70,14 @@
   </style>
 </head>
 <body>
-  <div class="auth-container" id="loginForm">
+  <form class="auth-container" id="loginForm" action="/login" method="post">
     <h2>تسجيل الدخول</h2>
     <div class="error-msg" id="loginError">❌ البريد أو كلمة المرور غير صحيحة</div>
     <div class="form-group"><input type="email" id="loginEmail" placeholder="📧 البريد الإلكتروني" /></div>
     <div class="form-group"><input type="password" id="loginPassword" placeholder="🔒 كلمة المرور" /></div>
-    <button class="btn" onclick="login()">دخول</button>
+    <button class="btn" type="submit">دخول</button>
     <div class="switch-link" onclick="showRegister()">لا تملك حسابًا؟ أنشئ حساب</div>
-  </div>
-
+  </form>
   <div class="auth-container" id="registerForm" style="display:none;">
     <h2>إنشاء حساب جديد</h2>
     <div class="error-msg" id="registerError">⚠️ تأكد من تعبئة كل الحقول</div>
