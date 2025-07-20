@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(to bottom right, #f7f9fc, #e3f2fd);
+    direction: rtl;
+    overflow-x: hidden;
+  }
+  
+
+  
+  main.account-container {
+    padding: 40px 30px;
+    max-width: 750px;
+    margin: auto;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 90px;
+    animation: fadeSlideUp 0.7s ease;
+  }
+  
+  main h1 {
+    text-align: center;
+    color: #00b894;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  
+  .account-box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .avatar-wrapper {
+    position: relative;
+    width: 130px;
+    height: 130px;
+  }
+  
+  .avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00cec9;
+    transition: all 0.3s ease;
+  }
+  
+  .img-animate-glow {
+    box-shadow: 0 0 30px 6px rgba(0, 206, 201, 0.4);
+  }
+  
+  .upload-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #00cec9;
+    color: white;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  }
+  
+  .avatar-note {
+    font-size: 13px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .account-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    background: #f9f9f9;
+    transition: box-shadow 0.2s ease;
+    box-sizing: border-box;
+  }
+  
+  .form-group input:focus {
+    box-shadow: 0 0 0 2px rgba(0, 206, 201, 0.3);
+  }
+  
+  .save-btn {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .save-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 14px rgba(0, 206, 201, 0.3);
+  }
+  
+  .toast-global {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #00b894;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+  }
+  
+  .toast-global.hide {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (max-width: 768px) {
+ 
+  
+    .account-form {
+      grid-template-columns: 1fr;
+    }
+  
+    main.account-container {
+      margin-top: 30px;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 20px;
+    }
+  
+    .avatar-wrapper {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .save-btn {
+      font-size: 15px;
+    }
+  }
+  

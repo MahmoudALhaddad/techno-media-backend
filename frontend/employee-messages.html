@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>المحادثات</title>
+  <link rel="stylesheet" href="./css/employee-messages.css" />
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ✅ القائمة الجانبية -->
+  <button id="menuToggle" class="menu-toggle">☰</button>
+  <div class="sidebar show" id="sidebar">
+    <button class="close-btn" id="closeSidebar">✖</button>
+    <h3>لوحة الموظف</h3>
+    <a href="./employee-dashboard.html"><i class="fas fa-home"></i> الرئيسية</a>
+    <a href="./employee-files.html"><i class="fas fa-folder-open"></i> ملفاتي</a>
+    <a href="./employee-settings.html"><i class="fas fa-user-cog"></i> الإعدادات</a>
+    <a href="./employee-notifications.html"><i class="fas fa-bell"></i> الإشعارات</a>
+    <a href="./employee-messages.html" class="active"><i class="fas fa-comments"></i> المحادثات</a>
+    <a href="/logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+  </div>
+
+  <!-- ✅ محتوى المحادثة -->
+  <main class="chat-wrapper">
+    <button class="mobile-client-toggle" id="toggleClients">👥</button>
+
+    <div class="chat-wrapper">
+        <!-- قائمة المحادثات -->
+        <aside class="chat-list" id="chatList">
+          <h2>المحادثات</h2>
+          <ul id="clientsList">
+            <li data-client="client1" class="active">
+              <strong>محمد علي</strong><br/>
+              <span>هل يمكن تعديل التصميم؟</span>
+            </li>
+            <li data-client="client2">
+              <strong>نور الدين</strong><br/>
+              <span>تم إرسال الملفات</span>
+            </li>
+            <li data-client="client3">
+              <strong>سارة الكيلاني</strong><br/>
+              <span>متى سيتم التسليم؟</span>
+            </li>
+          </ul>
+        </aside>
+      
+        <!-- المحادثة -->
+        <section class="chat-box">
+          <div class="chat-header">
+            
+            <h3 id="chatTitle">المحادثة مع: محمد علي</h3>
+          </div>
+      
+          <div class="chat-messages" id="chatMessages">
+            <div class="msg left">مرحبًا، هل تم البدء في الطلب؟</div>
+            <div class="msg right">نعم، نحن نعمل عليه الآن ✅</div>
+          </div>
+      
+          <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="اكتب رسالتك هنا..." />
+            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </section>
+      </div>
+  </main>
+
+  <script src="./js/employee-messages.js"></script>
+
+  
+</body>
+</html>

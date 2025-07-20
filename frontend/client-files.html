@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ملفاتي</title>
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="./css/client-files.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ✅ القائمة الجانبية -->
+<button id="menuToggle" class="menu-toggle">☰</button>
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <h3>لوحة العميل</h3>
+  <a href="./client-dashboard-FULL-REBUILT.html"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="./account.html"><i class="fas fa-user-cog"></i> الحساب</a>
+  <a href="./client-dashboard-FULL-REBUILT.html#orders"><i class="fas fa-list-alt"></i> طلباتي</a>
+  <a href="./client-files.html"><i class="fas fa-folder-open"></i> ملفاتي</a>
+  <a href="./plan.html"><i class="fas fa-gem"></i> اشتراكي</a>
+  <a href="/logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+</div>
+
+<main class="files-page">
+  <h1><i class="fas fa-folder-open"></i> ملفاتي</h1>
+
+  <!-- ✅ الطلب 1 -->
+  <section class="order-section">
+    <div class="order-header">
+      <h2>تصميم شعار تطبيق</h2>
+      <span><i class="fas fa-calendar-alt"></i> 15 أبريل 2024</span>
+    </div>
+
+    <div class="files-grid">
+      <div class="file-card">
+        <div class="file-icon"><i class="fas fa-file-image"></i></div>
+        <div class="file-info">
+          <h3>شعار نهائي.png</h3>
+          <a href="#" class="download-btn" download><i class="fas fa-download"></i> تحميل</a>
+        </div>
+      </div>
+      
+
+      <div class="file-card">
+        <div class="file-icon"><i class="fas fa-file-archive"></i></div>
+        <div class="file-info">
+          <h3>الملفات المفتوحة.zip</h3>
+          <a href="#" class="download-btn" download><i class="fas fa-download"></i> تحميل</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ الطلب 2 -->
+  <section class="order-section">
+    <div class="order-header">
+      <h2>مونتاج فيديو إعلاني</h2>
+      <span><i class="fas fa-calendar-alt"></i> 10 أبريل 2024</span>
+    </div>
+
+    <div class="files-grid">
+      <div class="file-card">
+        <div class="file-icon"><i class="fas fa-file-video"></i></div>
+        <div class="file-info">
+          <h3>الفيديو النهائي.mp4</h3>
+          <a href="#" class="download-btn" download><i class="fas fa-download"></i> تحميل</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="./js/client-files.js"></script>
+</body>
+</html>

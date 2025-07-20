@@ -1,0 +1,148 @@
+
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background: #f9fcff;
+}
+
+.orders-container {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.orders-container h1 {
+  text-align: center;
+  color: #0984e3;
+  margin-bottom: 20px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th, .orders-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-table th {
+  background: #f1f1f1;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  margin: 2px;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.assign-btn {
+  background: #00b894;
+  color: white;
+}
+
+.pause-btn {
+  background: #d63031;
+  color: white;
+}
+
+/* ✅ المودال */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  font-size: 20px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #0984e3;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: #00b894;
+}
+
+.confirm-btn {
+  width: 100%;
+  background: #00b894;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.toast-global {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #00b894;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+}
+.toast-global.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}

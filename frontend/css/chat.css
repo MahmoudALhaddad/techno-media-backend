@@ -1,0 +1,127 @@
+
+.chat-wrapper {
+  display: flex;
+  height: 600px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.chat-sidebar {
+  width: 30%;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.chat-list {
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.chat-list li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.chat-list li:hover {
+  background: #f0f0f0;
+}
+.chat-list li.active {
+  background-color: #dfe6e9;
+  font-weight: bold;
+}
+
+.chat-window {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chat-header {
+  background-color: #00b894;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message {
+  margin: 10px;
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 15px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.chat-message.admin {
+  background-color: #dff9fb;
+  align-self: flex-end;
+  text-align: right;
+  border-bottom-right-radius: 0;
+}
+
+.chat-message.client {
+  background-color: #f1f2f6;
+  align-self: flex-start;
+  text-align: left;
+  border-bottom-left-radius: 0;
+}
+
+.chat-message time {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.chat-input-area {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
+
+.chat-input-area input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+}
+
+.chat-input-area button {
+  padding: 10px 15px;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

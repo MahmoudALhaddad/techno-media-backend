@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>إدارة الطلبات</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/order.css" />
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ✅ زر القائمة -->
+<button id="menuToggle" class="menu-toggle">☰</button>
+
+<!-- ✅ القائمة الجانبية -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <h3>لوحة الإدارة</h3>
+  <a href="./admin-dashboard-REBUILT.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="./admin-clients.html"><i class="fas fa-users"></i> العملاء</a>
+  <a href="./admin-employees1.html"><i class="fas fa-user-cog"></i> الموظفون</a>
+  <a href="./order-REBUILT.html"><i class="fas fa-clipboard-list"></i> الطلبات</a>
+  <a href="./notification.html"><i class="fas fa-bell"></i> الإشعارات</a>
+  <a href="./settings.html"><i class="fas fa-cog"></i> الإعدادات</a>
+  <a href="./logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+</div>
+
+<main class="orders-container">
+  <h1>إدارة الطلبات</h1>
+  <table class="orders-table">
+    <thead>
+      <tr>
+        <th>الطلب</th>
+        <th>العميل</th>
+        <th>الحالة</th>
+        <th>الموظف</th>
+        <th>الوقت المتبقي</th>
+        <th>العمليات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-deadline="">
+        <td>موقع شركة</td>
+        <td>أحمد زيدان</td>
+        <td><span class="badge pending">قيد الانتظار</span></td>
+        <td class="assigned-cell">-</td>
+        <td class="countdown">--:--:--</td>
+        <td>
+          <button class="assign-btn"><i class="fas fa-user-plus"></i> تعيين</button>
+          <button class="track-btn"><i class="fas fa-route"></i> تتبع</button>
+          <button class="pause-btn"><i class="fas fa-pause-circle"></i></button>
+          <button class="resume-btn"><i class="fas fa-play-circle"></i></button>
+          <button class="details-btn"><i class="fas fa-eye"></i> تفاصيل</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<!-- ✅ مودال التتبع بتصميم متدرج -->
+<div class="modal hidden" id="trackModal">
+  <div class="modal-content tracking-modal">
+    <span class="close-modal" id="closeTrack">✖</span>
+    <h2>🔁 تتبع الطلب</h2>
+    <ul class="tracking-steps">
+      <li class="step done"><i class="fas fa-check-circle"></i> تم استلام الطلب</li>
+      <li class="step done"><i class="fas fa-spinner"></i> قيد التنفيذ</li>
+      <li class="step pending"><i class="fas fa-clock"></i> جاهز للتسليم</li>
+      <li class="step pending"><i class="fas fa-check-double"></i> تم التسليم</li>
+    </ul>
+    <button id="advanceStepBtn" class="next-btn">التالي</button>
+  </div>
+</div>
+
+<!-- ✅ مودال التفاصيل بشكل منسق -->
+<div class="modal hidden" id="detailsModal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeModal">✖</span>
+    <h2><i class="fas fa-clipboard-list"></i> تفاصيل الطلب</h2>
+    <div class="order-summary">
+      <p><strong>📌 الطلب:</strong> موقع شركة</p>
+      <p><strong>🧑‍💼 العميل:</strong> أحمد زيدان</p>
+      <p><strong>👨‍💻 الموظف:</strong> -</p>
+      <p><strong>📂 الحالة:</strong> قيد الانتظار</p>
+    </div>
+
+    <h3>📁 الملفات المرفقة</h3>
+    <ul class="file-list">
+      <li><i class="fas fa-file-image"></i> logo.png <button>تحميل</button></li>
+    </ul>
+
+    <h3>💬 الرسائل</h3>
+    <div class="message-thread">
+      <p><strong>👤 العميل:</strong> أرجو أن يكون سريع الاستجابة</p>
+    </div>
+
+    <h3>📝 ملاحظات المدير</h3>
+    <textarea rows="3" placeholder="أضف ملاحظاتك هنا..."></textarea>
+  </div>
+</div>
+
+<!-- ✅ مودال التعيين -->
+<div class="modal hidden" id="assignModal" data-row="">
+  <div class="modal-content">
+    <span class="close-modal" id="closeAssignModal">✖</span>
+    <h2>تعيين موظف</h2>
+    <select id="employeeSelect">
+      <option value="">-- اختر موظفًا --</option>
+      <option value="أحمد">أحمد</option>
+      <option value="ليلى">ليلى</option>
+    </select>
+    <button id="confirmAssignBtn" class="confirm-btn">تأكيد التعيين</button>
+  </div>
+</div>
+
+<script src="./js/order.js"></script>
+</body>
+</html>

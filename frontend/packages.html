@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الباقات</title>
+    <link rel="stylesheet" href="./css/packages.css">
+    <link rel="stylesheet" href="./css/admin-sidebar.css">
+</head>
+<body>
+
+    <!-- ✅ الشريط العلوي -->
+    <header>
+        <button id="menu-toggle">☰</button>
+        <h1>إدارة الباقات</h1>
+    </header>
+
+    <!-- ✅ القائمة الجانبية -->
+    <nav id="sidebar">
+        <button id="close-menu">✖</button>
+        <ul>
+            <li data-page="admin-dashboard">🏠 الصفحة الرئيسية</li>
+            <li data-page="orders">📋 الطلبات</li>
+            <li data-page="admin-employees">👨‍💼 إدارة الموظفين</li>
+            <li data-page="clients">🧑‍💼 إدارة العملاء</li>
+            <li data-page="packages">🎁 إدارةالبطاقات</li>
+            <li data-page="notifications">🔔 إدارة الإشعارات</li>
+            <li data-page="settings">⚙️ الإعدادات</li>
+        </ul>
+    </nav>
+
+    <!-- ✅ محتوى الصفحة -->
+    <main>
+        <h2>إدارة الباقات</h2>
+        <button id="add-package-btn">+ إضافة باقة جديدة</button>
+        <input type="text" id="search-input" placeholder="🔍 البحث عن باقة...">
+        
+        <table id="packages-table">
+            <thead>
+                <tr>
+                    <th>صورة</th>
+                    <th>اسم الباقة</th>
+                    <th>السعر</th>
+                    <th>المدة</th>
+                    <th>عدد الطلبات</th>
+                    <th>العرض</th>
+                    <th>التحكم</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- سيتم ملء البيانات هنا بواسطة JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- ✅ نافذة إضافة الباقة -->
+    <div id="add-package-modal" class="modal">
+        <div class="modal-content">
+            <button id="close-modal">✖</button>
+            <h3>إضافة باقة جديدة</h3>
+            <form id="package-form">
+                <input type="text" id="package-name" placeholder="🎁 اسم الباقة" required>
+                <input type="number" id="package-price" placeholder="💰 السعر بالدولار" required>
+                <input type="file" id="package-image" accept="image/*" required>
+                <select id="package-duration">
+                    <option value="one-time">لمرة واحدة</option>
+                    <option value="30">شهر</option>
+                    <option value="90">3 أشهر</option>
+                    <option value="365">سنة</option>
+                </select>
+                <input type="number" id="package-orders" placeholder="📦 عدد الطلبات المتاحة (أو 0 لغير محدود)" required>
+                <textarea id="package-description" placeholder="📝 وصف الباقة"></textarea>
+                <label>
+                    <input type="checkbox" id="package-offer"> 🔥 تفعيل العرض
+                </label>
+                <input type="number" id="offer-duration" placeholder="⏳ مدة العرض بالساعات" disabled>
+                <button type="submit">💾 حفظ</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/packages.js"></script>
+    <script src="./js/admin-sidebar.js"></script>
+</body>
+</html>

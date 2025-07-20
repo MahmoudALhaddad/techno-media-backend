@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ملفاتي | الموظف</title>
+  <link rel="stylesheet" href="./css/employee-files.css" />
+  <link rel="stylesheet" href="./css/styles-final.css" /> <!-- القائمة الجانبية -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ✅ القائمة الجانبية (بأسلوبك السابق + تحسينات) -->
+<button id="menuToggle" class="menu-toggle">☰</button>
+
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <h3>لوحة الموظف</h3>
+
+  <a href="./employee-dashboard.html"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="./employee-files.html"><i class="fas fa-folder-open"></i> ملفاتي</a>
+  <a href="./employee-settings.html"><i class="fas fa-user-cog"></i> الإعدادات</a>
+  <a href="./employee-notifications.html"><i class="fas fa-bell"></i> الإشعارات</a>
+  <a href="./employee-messages.html"><i class="fas fa-comments"></i> المحادثات</a>
+  <a href="/logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+</div>
+
+
+  <main class="files-container">
+    <h1><i class="fas fa-folder-open"></i> ملفاتي</h1>
+    
+    <div class="files-list">
+      <!-- 🧩 مثال على ملف -->
+      <div class="file-card">
+        <div class="file-icon"><i class="fas fa-file-pdf"></i></div>
+        <div class="file-info">
+          <h3>الشعار النهائي.pdf</h3>
+          <p><strong>الطلب:</strong> تصميم شعار</p>
+          <p><strong>تاريخ الرفع:</strong> 2025-06-12</p>
+        </div>
+        <div class="file-actions">
+          <a href="#" class="download-btn" download><i class="fas fa-download"></i> تحميل</a>
+        </div>
+      </div>
+
+      <!-- ✅ مزيد من الملفات سيتم توليدها تلقائيًا -->
+    </div>
+  </main>
+
+  <script src="./js/employee-files.js"></script>
+</body>
+</html>

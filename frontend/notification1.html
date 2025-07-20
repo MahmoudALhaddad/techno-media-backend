@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>إدارة الإشعارات</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/notification1.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<main class="orders-container">
+  <h1>📢 إدارة الإشعارات</h1>
+  <button class="assign-btn" id="sendNotifyBtn"><i class="fas fa-bell"></i> إرسال إشعار</button>
+  <table class="orders-table" style="margin-top: 20px;">
+    <thead>
+      <tr>
+        <th>العنوان</th>
+        <th>المحتوى</th>
+        <th>الفئة</th>
+        <th>التاريخ</th>
+        <th>العمليات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>عرض خاص</td>
+        <td>خصم 30% على الباقات السنوية</td>
+        <td>العملاء</td>
+        <td>2025-07-02 14:00</td>
+        <td><button class="pause-btn delete-btn"><i class="fas fa-trash-alt"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<!-- ✅ مودال إرسال إشعار مع تحديد الفئة -->
+<div class="modal hidden" id="notifyModal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeNotifyModal">✖</span>
+    <h2><i class="fas fa-paper-plane"></i> إرسال إشعار جديد</h2>
+    <select id="notifyTarget" class="input-field">
+      <option value="الجميع">📢 الجميع</option>
+      <option value="العملاء">👥 العملاء</option>
+      <option value="الموظفين">👨‍💼 الموظفين</option>
+      <option value="التجريبيون">🧪 التجريبيون</option>
+    </select>
+    <input type="text" class="input-field" placeholder="عنوان الإشعار" id="notifyTitle" />
+    <textarea class="input-field" rows="4" placeholder="محتوى الإشعار" id="notifyBody"></textarea>
+    <button class="confirm-btn" id="sendNotifyConfirm">إرسال</button>
+  </div>
+</div>
+
+<script src="./js/notification1.js"></script>
+</body>
+</html>

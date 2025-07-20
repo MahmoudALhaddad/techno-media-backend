@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لوحة التحكم - المدير</title>
+  <link rel="stylesheet" href="./css/admin-dashboard.css" />
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ✅ زر القائمة -->
+<button id="menuToggle" class="menu-toggle">☰</button>
+
+<!-- ✅ القائمة الجانبية -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <h3>لوحة الإدارة</h3>
+  <a href="./admin-dashboard-REBUILT.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="./admin-clients.html"><i class="fas fa-users"></i> العملاء</a>
+  <a href="./admin-employees1.html"><i class="fas fa-user-cog"></i> الموظفون</a>
+  <a href="./order-REBUILT.html"><i class="fas fa-clipboard-list"></i> الطلبات</a>
+  <a href="./notification1.html"><i class="fas fa-bell"></i> الإشعارات</a>
+  <a href="./settings.html"><i class="fas fa-cog"></i> الإعدادات</a>
+  <a href="./logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+</div>
+
+<main class="dashboard-container">
+  <h1>لوحة التحكم</h1>
+
+  <!-- ✅ كروت الإحصائيات -->
+  <section class="stats-grid">
+    <div class="stat-card"><i class="fas fa-users"></i><h3>52</h3><p>عدد العملاء</p></div>
+    <div class="stat-card"><i class="fas fa-user-cog"></i><h3>8</h3><p>عدد الموظفين</p></div>
+    <div class="stat-card"><i class="fas fa-tasks"></i><h3>74</h3><p>الطلبات الكلية</p></div>
+    <div class="stat-card"><i class="fas fa-check-circle"></i><h3>63</h3><p>طلبات مكتملة</p></div>
+  </section>
+
+  <!-- ✅ سلايدر الطلبات الجديدة -->
+  <section class="slider-section">
+    <h2>🆕 الطلبات الجديدة</h2>
+    <div class="slider-wrapper">
+      <div class="order-card">
+        <h3>طلب تصميم شعار</h3>
+        <p>العميل: محمد علي</p>
+        <p>الحالة: قيد الانتظار</p>
+      </div>
+      <div class="order-card">
+        <h3>طلب واجهة تطبيق</h3>
+        <p>العميل: سارة الكيلاني</p>
+        <p>الحالة: قيد الانتظار</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ سلايدر الطلبات قيد التنفيذ -->
+  <section class="slider-section">
+    <h2>🟠 طلبات قيد التنفيذ</h2>
+    <div class="slider-wrapper">
+      <div class="order-card active">
+        <h3>موقع تعريفي لشركة</h3>
+        <p>العميل: هبة المصري</p>
+        <p>الحالة: قيد التنفيذ</p>
+      </div>
+      <div class="order-card active">
+        <h3>تصميم غلاف يوتيوب</h3>
+        <p>العميل: لؤي الحسن</p>
+        <p>الحالة: قيد التنفيذ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ سلايدر الطلبات المكتملة -->
+  <section class="slider-section">
+    <h2>✅ الطلبات المكتملة</h2>
+    <div class="slider-wrapper">
+      <div class="order-card completed">
+        <h3>موقع شركة عقارات</h3>
+        <p>العميل: فادي رباح</p>
+        <p>تم التسليم</p>
+      </div>
+      <div class="order-card completed">
+        <h3>تصميم كتيب PDF</h3>
+        <p>العميل: نور الدين</p>
+        <p>تم التسليم</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  // ✅ فتح وإغلاق القائمة الجانبية
+  document.getElementById("menuToggle")?.addEventListener("click", () => {
+    document.getElementById("sidebar")?.classList.add("open");
+  });
+  document.getElementById("closeSidebar")?.addEventListener("click", () => {
+    document.getElementById("sidebar")?.classList.remove("open");
+  });
+</script>
+
+<script src="admin-dashboard.js"></script>
+</body>
+</html>

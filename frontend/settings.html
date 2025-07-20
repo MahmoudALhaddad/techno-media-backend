@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعدادات الموقع</title>
+    <link rel="stylesheet" href="./css/settings.css">
+    <link rel="stylesheet" href="./css/admin-sidebar.css">
+    <link rel="stylesheet" href="./css/admin-sidebar.css"><link rel="stylesheet" href="./css/design.css">
+    <script defer src="./js/settings.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <link rel="stylesheet" href="./css/statistics.css">
+<script defer src="./js/statistics.js"></script>
+
+<link rel="stylesheet" href="./css/chat.css">
+<script defer src="./js/chat.js"></script>
+
+<link rel="stylesheet" href="./css/payments.css">
+<script defer src="./js/payments.js"></script>
+
+
+<link rel="stylesheet" href="./css/general-settings.css">
+<script defer src="./js/general-settings.js"></script>
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/medium-editor@5.23.3/dist/css/medium-editor.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/medium-editor@5.23.3/dist/js/medium-editor.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+   
+</head>
+<body>
+
+    <!-- ✅ الشريط العلوي -->
+    <header>
+        <button id="menu-toggle">☰</button>
+        <h1>الاعدادات  </h1>
+    </header>
+
+    <!-- ✅ القائمة الجانبية -->
+    <nav id="sidebar">
+        <button id="close-menu">✖</button>
+        <ul>
+            <li data-page="admin-dashboard">🏠 الصفحة الرئيسية</li>
+            <li data-page="orders">📋 الطلبات</li>
+            <li data-page="admin-employees">👨‍💼 إدارة الموظفين</li>
+            <li data-page="clients">🧑‍💼 إدارة العملاء</li>
+            <li data-page="packages">🎁 إدارةالبطاقات</li>
+            <li data-page="notifications">🔔 إدارة الإشعارات</li>
+            <li data-page="settings">⚙️ الإعدادات</li>
+        </ul>
+    </nav>
+
+        <!-- سلايدر التبويبات -->
+<div class="tabs-container">
+    <div class="tabs" id="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'general')">⚙️ الإعدادات العامة</button>
+        <button class="tab-btn" onclick="openTab(event, 'payments')">💰 المدفوعات</button>
+        <button class="tab-btn" onclick="openTab(event, 'chats')">💬 المحادثات</button>
+        <button class="tab-btn" onclick="openTab(event, 'stats')">📊 الإحصائيات</button>
+        <button class="tab-btn" onclick="openTab(event, 'design')">🎨 المحتوى والتصميم</button>
+    </div>
+</div>
+
+<!-- محتوى التبويبات -->
+<div class="content">
+
+    <!-- الإعدادات العامة -->
+<div id="general" class="tab-content active">
+    <div class="settings-card">
+      <h2>⚙️ الإعدادات العامة</h2>
+  
+      <!-- تغيير اسم الموقع -->
+      <div class="form-group">
+        <label for="siteName">🏷️ اسم الموقع:</label>
+        <input type="text" id="siteName" value="موقعي الإلكتروني" class="input-field">
+      </div>
+  
+      <!-- وصف الموقع -->
+      <div class="form-group">
+        <label for="siteDescription">📝 وصف الموقع:</label>
+        <textarea id="siteDescription" rows="3" class="input-field">موقع يقدم خدمات احترافية...</textarea>
+      </div>
+  
+      <!-- تغيير شعار الموقع -->
+      <div class="form-group">
+        <label for="logoUpload">🖼️ شعار الموقع:</label>
+        <div class="logo-preview-container">
+          <img id="logoPreview" src="default-logo.png" alt="معاينة الشعار" width="120">
+        </div>
+        <input type="file" id="logoUpload" class="input-file">
+      </div>
+  
+      <!-- الألوان -->
+      <div class="form-group">
+        <label for="primaryColor">🎨 اللون الرئيسي:</label>
+        <input type="color" id="primaryColor" value="#00b894">
+      </div>
+  
+      <!-- اللغة الافتراضية -->
+      <div class="form-group">
+        <label for="defaultLanguage">🌐 اللغة الافتراضية:</label>
+        <select id="defaultLanguage" class="input-field">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+  
+      <!-- روابط التواصل -->
+      <div class="form-group">
+        <label>🔗 روابط التواصل الاجتماعي:</label>
+        <input type="url" placeholder="رابط فيسبوك" class="input-field">
+        <input type="url" placeholder="رابط واتساب" class="input-field">
+        <input type="url" placeholder="رابط إنستغرام" class="input-field">
+      </div>
+  
+      <!-- زر الحفظ -->
+      <button type="button" class="save-btn">💾 حفظ التعديلات</button>
+    </div>
+  </div>
+  
+
+        
+
+    <!-- الإحصائيات -->
+    <div class="tab-content" id="stats">
+        <h2>📊 لوحة الإحصائيات الكاملة</h2>
+      
+        <!-- بطاقات الإحصائيات -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <h3>👥 عدد العملاء</h3>
+            <p id="clientsCount"></p>
+          </div>
+          <div class="stat-card">
+            <h3>✅ الطلبات المكتملة</h3>
+            <p id="completedOrders"></p>
+          </div>
+          <div class="stat-card">
+            <h3>🕓 الطلبات الجارية</h3>
+            <p id="activeOrders"></p>
+          </div>
+          <div class="stat-card">
+            <h3>📉 الطلبات المرفوضة</h3>
+            <p id="rejectedOrders"></p>
+          </div>
+          <div class="stat-card">
+            <h3>💰 الإيرادات الشهرية</h3>
+            <p id="monthlyRevenue"></p>
+          </div>
+          <div class="stat-card">
+            <h3>📈 الإيرادات السنوية</h3>
+            <p id="yearlyRevenue"></p>
+          </div>
+          <div class="stat-card">
+            <h3>📊 الأرباح العامة</h3>
+            <p id="totalProfit"></p>
+          </div>
+          <div class="stat-card">
+            <h3>⭐ معدل رضا العملاء</h3>
+            <p id="satisfaction"></p>
+          </div>
+          <div class="stat-card">
+            <h3>🔥 أكثر خدمة مطلوبة</h3>
+            <p id="topService"> </p>
+          </div>
+        </div>
+      
+        <!-- الرسوم البيانية -->
+        <div class="charts">
+          <h3>📊 تطور الطلبات خلال الأشهر</h3>
+          <canvas id="ordersChart" width="400" height="200"></canvas>
+      
+          <h3>💸 الإيرادات الشهرية</h3>
+          <canvas id="revenueChart" width="400" height="200"></canvas>
+        </div>
+      </div>
+      
+      
+        
+      
+    <!-- إعدادات المدفوعات -->
+    <div id="payments" class="tab-content">
+        <h2>💰 إدارة المدفوعات</h2>
+      
+        <!-- 🔍 فلاتر التاريخ -->
+        <div class="filter-section">
+          <label>📅 من: <input type="date" id="fromDate"></label>
+          <label>📅 إلى: <input type="date" id="toDate"></label>
+          <button id="exportBtn">⬇️ تصدير المعاملات</button>
+        </div>
+      
+        <!-- جدول المعاملات -->
+        <div class="payments-section">
+          <h3>📋 سجل المعاملات</h3>
+          <table class="payments-table">
+            <thead>
+              <tr>
+                <th>👤 العميل</th>
+                <th>💼 الخدمة</th>
+                <th>💵 المبلغ</th>
+                <th>📅 التاريخ</th>
+                <th>📌 الحالة</th>
+                <th>🔍 تفاصيل</th>
+              </tr>
+            </thead>
+            <tbody id="paymentsBody">
+              <!-- سيتم تعبئته ديناميكيًا -->
+            </tbody>
+          </table>
+        </div>
+      
+        <!-- إعدادات الدفع -->
+        <div class="payment-settings">
+          <h3>⚙️ إعدادات الدفع</h3>
+          <label><input type="checkbox" checked> 💳 بطاقة ائتمان</label><br>
+          <label><input type="checkbox" checked> 🏦 تحويل بنكي</label><br>
+          <label><input type="checkbox"> 🅿️ باي بال</label><br>
+          <button class="save-btn">💾 حفظ التعديلات</button>
+        </div>
+      </div>
+      
+
+    <!-- إدارة المحادثات -->
+    <div id="chats" class="tab-content">
+        <h2>💬 إدارة المحادثات</h2>
+        <div class="chat-wrapper">
+          <!-- قائمة المحادثات -->
+          <div class="chat-sidebar">
+            <input type="text" class="search-input" placeholder="🔍 ابحث عن محادثة...">
+            <ul class="chat-list" id="chatList">
+              <!-- المحادثات تظهر هنا -->
+            </ul>
+          </div>
+      
+          <!-- نافذة المحادثة -->
+          <div class="chat-window">
+            <div class="chat-header" id="chatHeader">
+              <span id="chatUser">اختر محادثة</span>
+              <button id="downloadChatBtn">⬇️ تنزيل المحادثة</button>
+            </div>
+      
+            <div class="chat-messages" id="chatMessages">
+              <!-- الرسائل تظهر هنا -->
+            </div>
+      
+            <div class="chat-input-area">
+              <input type="file" id="attachment" style="display: none">
+              <button onclick="document.getElementById('attachment').click()">📎</button>
+              <input type="text" id="chatInput" placeholder="اكتب رسالة..." disabled />
+              <button id="sendMessageBtn" disabled>📤</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  
+
+    <!-- إدارة المحتوى والتصميم -->
+    <div id="design" class="tab-content ">
+        <h2>🎨 إدارة المحتوى والتصميم</h2>
+        <div class="toolbar" id="toolbar">
+            <button onclick="editText()">✏️ تعديل النص</button>
+            <button onclick="replaceMedia()">🖼️ تغيير صورة/فيديو</button>
+            <button onclick="changeColor()">🎨 تغيير اللون</button>
+            <button onclick="duplicateElement()">📑 نسخ</button>
+            <button onclick="deleteElement()">🗑️ حذف</button>
+            <button onclick="insertMedia()">📷 إضافة صورة/فيديو إلى قسم</button>
+
+            <button onclick="applyAnimation()">✨ إضافة تأثير</button>
+            <button onclick="addNewSection()">➕ إضافة قسم جديد</button>
+        </div>
+    
+        <iframe id="livePreview" src="index.html"></iframe>
+    </div>
+
+    
+
+<script src="./js/admin-sidebar.js"></script>
+<script src="./js/design.js"></script>
+
+</body>
+</html>

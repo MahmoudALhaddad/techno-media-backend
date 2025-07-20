@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>إشعارات الموظف</title>
+  <link rel="stylesheet" href="./css/employee-notifications.css" />
+  <link rel="stylesheet" href="./css/styles-final.css" /> <!-- قائمة جانبية موحدة -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ✅ القائمة الجانبية -->
+  <button id="menuToggle" class="menu-toggle">☰</button>
+  <div class="sidebar show" id="sidebar">
+    <button class="close-btn" id="closeSidebar">✖</button>
+    <h3>لوحة الموظف</h3>
+    <a href="./employee-dashboard.html"><i class="fas fa-home"></i> الرئيسية</a>
+    <a href="./employee-files.html"><i class="fas fa-folder-open"></i> ملفاتي</a>
+    <a href="./employee-settings.html"><i class="fas fa-user-cog"></i> الإعدادات</a>
+    <a href="./employee-notifications.html" class="active"><i class="fas fa-bell"></i> الإشعارات</a>
+    <a href="./employee-messages.html"><i class="fas fa-comments"></i> المحادثات</a>
+    <a href="/logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+  </div>
+
+  <!-- ✅ المحتوى الرئيسي -->
+  <main class="notifications-container">
+    <h1><i class="fas fa-bell"></i> الإشعارات</h1>
+
+    <div class="notification-list">
+      <!-- إشعار مثال -->
+      <div class="notification-card unread">
+        <div class="notif-icon"><i class="fas fa-tasks"></i></div>
+        <div class="notif-info">
+          <h3>تم تعيينك لتنفيذ طلب جديد</h3>
+          <p>رقم الطلب: #254 - تصميم واجهة موقع</p>
+          <span class="notif-time">قبل 10 دقائق</span>
+        </div>
+        <div class="notif-actions">
+          <a href="./employee-dashboard.html" class="action-btn">عرض الطلب</a>
+        </div>
+      </div>
+
+      <!-- إشعار آخر -->
+      <div class="notification-card read">
+        <div class="notif-icon"><i class="fas fa-info-circle"></i></div>
+        <div class="notif-info">
+          <h3>تم تحديث حالة الطلب #221</h3>
+          <p>الطلب أصبح الآن "مكتمل"</p>
+          <span class="notif-time">أمس - 14:22</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // ✅ فتح وإغلاق القائمة الجانبية
+document.getElementById("menuToggle")?.addEventListener("click", () => {
+    document.getElementById("sidebar")?.classList.add("open");
+});
+document.getElementById("closeSidebar")?.addEventListener("click", () => {
+    document.getElementById("sidebar")?.classList.remove("open");
+});
+  </script>
+</body>
+</html>

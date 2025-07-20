@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لوحة الموظف</title>
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="./css/employee-styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ✅ القائمة الجانبية (بأسلوبك السابق + تحسينات) -->
+<button id="menuToggle" class="menu-toggle">☰</button>
+
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <h3>لوحة الموظف</h3>
+
+  <a href="./employee-dashboard.html"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="./employee-files.html"><i class="fas fa-folder-open"></i> ملفاتي</a>
+  <a href="./employee-settings.html"><i class="fas fa-user-cog"></i> الإعدادات</a>
+  <a href="./employee-notifications.html"><i class="fas fa-bell"></i> الإشعارات</a>
+  <a href="./employee-messages.html"><i class="fas fa-comments"></i> المحادثات</a>
+  <a href="/logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+</div>
+
+
+<main class="employee-container">
+  <h1 id="employeeTitle">مرحبًا بك، موظف!</h1>
+
+  <!-- 🔸 قيد الانتظار -->
+<section class="orders-section" id="pendingOrders">
+    <h2><i class="fas fa-hourglass-start"></i> طلبات قيد الانتظار</h2>
+    <div class="orders-list scroll-slider">
+      <div class="order-card waiting">
+        <h3>طلب تصميم شعار</h3>
+        <p><strong>الحالة:</strong> قيد الانتظار</p>
+        <div class="order-actions">
+          <button class="accept-btn">قبول الطلب</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 🔶 قيد التنفيذ -->
+  <section class="orders-section" id="activeOrders">
+    <h2><i class="fas fa-tasks"></i> طلبات قيد التنفيذ</h2>
+    <div class="orders-list scroll-slider">
+      <div class="order-card active">
+        <h3>طلب واجهة موقع</h3>
+        <p><strong>الحالة:</strong> قيد التنفيذ</p>
+        <p class="countdown"><strong>الوقت المتبقي:</strong> <span class="timer">--:--:--</span></p>
+        <div class="order-actions">
+          <button class="track-btn">تتبع الطلب</button>
+          <button class="pause-btn">إيقاف مؤقت</button>
+          <button class="view-btn">عرض التفاصيل</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ✅ مكتمل -->
+  <section class="orders-section" id="completedOrders">
+    <h2><i class="fas fa-check-circle"></i> الطلبات المكتملة</h2>
+    <div class="orders-list scroll-slider">
+      <div class="order-card completed">
+        <h3>تصميم كتيب PDF</h3>
+        <p><strong>الحالة:</strong> مكتمل</p>
+        <button class="view-btn">عرض</button>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <!-- ✅ مودال تتبع الطلب -->
+<div class="tracking-modal hidden" id="trackingModal">
+    <div class="tracking-content">
+      <span class="close-btn" id="closeTracking">&times;</span>
+      <h2>تتبع مراحل الطلب</h2>
+      <ul class="tracking-steps">
+        <li class="step done"><i class="fas fa-check-circle"></i> تم استلام الطلب</li>
+        <li class="step done"><i class="fas fa-user-cog"></i> جارٍ العمل عليه</li>
+        <li class="step pending"><i class="fas fa-file-alt"></i> قيد المراجعة</li>
+        <li class="step pending"><i class="fas fa-check"></i> تم التسليم</li>
+      </ul>
+      <button id="nextStepBtn" class="next-step-btn">المرحلة التالية</button>
+
+
+    </div>
+  </div>
+
+
+<!-- ✅ مودال تفاصيل الطلب -->
+<div id="detailsModal" class="modal hidden">
+  <div class="modal-content details-modal">
+    <span class="close-btn" id="closeDetailsModal">&times;</span>
+
+    <h2 class="modal-title">تفاصيل الطلب</h2>
+    <p class="order-title"><strong>اسم الطلب:</strong> تصميم موقع إلكتروني</p>
+    <p class="order-description"><strong>الوصف:</strong> بناء موقع احترافي مع لوحة تحكم ودفع إلكتروني.</p>
+
+    <!-- ✅ ملفات العميل -->
+    <div class="client-files">
+      <h4>📎 الملفات المرفقة من العميل:</h4>
+      <ul id="clientFilesList">
+        <li><a href="uploads/logo.png" target="_blank"><i class="fas fa-file-image"></i> logo.png</a></li>
+        <li><a href="uploads/specs.pdf" target="_blank"><i class="fas fa-file-pdf"></i> specs.pdf</a></li>
+      </ul>
+    </div>
+
+    <!-- ✅ رفع ملفات الموظف -->
+    <label for="fileUpload">📁 أرفق الملفات:</label>
+    <input type="file" id="fileUpload" multiple>
+
+    <div id="uploadedFiles" class="file-preview"></div>
+
+    <label for="notes">📝 ملاحظات:</label>
+    <textarea id="notes" placeholder="اكتب ملاحظاتك هنا..." rows="4"></textarea>
+
+    <button class="send-btn">إرسال</button>
+  </div>
+</div>
+
+  
+  
+</main>
+
+
+
+
+<script src="./js/employee-scripts.js"></script>
+
+
+  
+</body>
+</html>

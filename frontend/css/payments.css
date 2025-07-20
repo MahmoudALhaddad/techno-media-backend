@@ -1,0 +1,58 @@
+
+.payments-section {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.payments-table th, .payments-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.payments-table th {
+  background-color: #f1f2f6;
+  color: #333;
+}
+
+.payments-table td {
+  background-color: #fafafa;
+}
+
+.payments-table tr:hover td {
+  background-color: #e8f6f3;
+}
+
+.payment-settings {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.payment-settings label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.payment-settings .save-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}

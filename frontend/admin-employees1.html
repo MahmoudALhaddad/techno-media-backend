@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>إدارة الموظفين</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/admin-employees.css" />
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+ <!-- ✅ زر القائمة -->
+<button id="menuToggle" class="menu-toggle">☰</button>
+
+<!-- ✅ القائمة الجانبية -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <h3>لوحة الإدارة</h3>
+  <a href="./admin-dashboard-REBUILT.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="./admin-clients.html"><i class="fas fa-users"></i> العملاء</a>
+  <a href="./admin-employees1.html"><i class="fas fa-user-cog"></i> الموظفون</a>
+  <a href="./order-REBUILT.html"><i class="fas fa-clipboard-list"></i> الطلبات</a>
+  <a href="./notification1.html"><i class="fas fa-bell"></i> الإشعارات</a>
+  <a href="./settings.html"><i class="fas fa-cog"></i> الإعدادات</a>
+  <a href="./logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+</div>
+
+<main class="orders-container">
+  <h1>إدارة الموظفين</h1>
+
+  <!-- 🔍 بحث -->
+  <input type="text" id="searchInput" placeholder="🔍 بحث بالاسم أو التخصص..." style="margin-bottom: 20px; padding: 8px 12px; border-radius: 8px; width: 100%; border: 1px solid #ccc;">
+
+  <button class="assign-btn" id="addEmployeeBtn"><i class="fas fa-user-plus"></i> إضافة موظف</button>
+  <table class="orders-table">
+    <thead>
+      <tr>
+        <th>الاسم</th>
+        <th>البريد الإلكتروني</th>
+        <th>رقم الواتساب</th>
+        <th>التخصص</th>
+        <th>عدد الطلبات</th>
+        <th>العمليات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>أحمد الساعدي</td>
+        <td>ahmad.dev@gmail.com</td>
+        <td>+962790000111</td>
+        <td>تصميم واجهات</td>
+        <td>12</td>
+        <td>
+          <button class="details-btn"><i class="fas fa-pen"></i></button>
+          <button class="pause-btn"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>سارة الكيلاني</td>
+        <td>sara.ui@gmail.com</td>
+        <td>+962790000222</td>
+        <td>UI/UX</td>
+        <td>9</td>
+        <td>
+          <button class="details-btn"><i class="fas fa-pen"></i></button>
+          <button class="pause-btn"><i class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<!-- ✅ مودال إضافة/تعديل موظف -->
+<div class="modal hidden" id="employeeModal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeEmployeeModal">✖</span>
+    <h2><i class="fas fa-user-cog"></i> إضافة / تعديل موظف</h2>
+    <input type="text" placeholder="الاسم" class="input-field" />
+    <input type="email" placeholder="البريد الإلكتروني" class="input-field" />
+    <input type="tel" placeholder="رقم الواتساب" class="input-field" />
+    <input type="text" placeholder="التخصص" class="input-field" />
+    <button class="confirm-btn">حفظ</button>
+  </div>
+</div>
+
+<script src="./js/admin-employees.js"></script>
+<script>
+  document.getElementById("searchInput").addEventListener("input", function () {
+    const keyword = this.value.toLowerCase();
+    document.querySelectorAll(".orders-table tbody tr").forEach(row => {
+      const name = row.cells[0].textContent.toLowerCase();
+      const spec = row.cells[3].textContent.toLowerCase();
+      row.style.display = (name.includes(keyword) || spec.includes(keyword)) ? "" : "none";
+    });
+  });
+</script>
+</body>
+</html>

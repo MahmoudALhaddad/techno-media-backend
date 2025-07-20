@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(to bottom right, #f0f9ff, #e0f7fa);
+    direction: rtl;
+  }
+  
+  /* ✅ الحاوية الأساسية */
+  .plan-container {
+    max-width: 800px;
+    margin: 100px auto 60px;
+    padding: 0 20px;
+  }
+  
+  .plan-container h1 {
+    text-align: center;
+    color: #00b894;
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  /* ✅ كرت الباقة */
+  .current-plan {
+    background: #ffffffee;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+    animation: fadeInUp 0.6s ease;
+  }
+  
+  /* ✅ رأس الباقة */
+  .plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .plan-name {
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .plan-status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .plan-status.active {
+    background: #00b894;
+    color: white;
+  }
+  
+  .plan-status.expired {
+    background: #e74c3c;
+    color: white;
+  }
+  
+  .plan-status.trial {
+    background: #f1c40f;
+    color: white;
+  }
+  
+  /* ✅ مميزات الباقة */
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .plan-features li {
+    font-size: 15px;
+    color: #444;
+  }
+  
+  .plan-features i {
+    color: #00cec9;
+    margin-left: 8px;
+  }
+  
+  /* ✅ تواريخ الباقة */
+  .plan-dates p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* ✅ زر التجديد */
+  .plan-action {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .renew-btn {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .renew-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 206, 201, 0.3);
+  }
+  
+  /* ✅ أنيميشن */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ✅ تجاوب */
+  @media (max-width: 600px) {
+    .plan-container h1 {
+      font-size: 22px;
+    }
+  
+    .plan-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .renew-btn {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  

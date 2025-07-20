@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إعدادات الحساب</title>
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="./css/account.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+ <!-- ✅ القائمة الجانبية -->
+<button id="menuToggle" class="menu-toggle">☰</button>
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <h3>لوحة العميل</h3>
+  <a href="./client-dashboard-FULL-REBUILT.html"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="./account.html"><i class="fas fa-user-cog"></i> الحساب</a>
+  <a href="./client-dashboard-FULL-REBUILT.html#orders"><i class="fas fa-list-alt"></i> طلباتي</a>
+  <a href="./client-files.html"><i class="fas fa-folder-open"></i> ملفاتي</a>
+  <a href="./plan.html"><i class="fas fa-gem"></i> اشتراكي</a>
+  <a href="/logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+</div>
+
+  <main class="account-container">
+    <h1><i class="fas fa-user-cog"></i> إعدادات الحساب</h1>
+
+    <div class="account-box">
+      <div class="avatar-section">
+        <div class="avatar-wrapper">
+          <img id="profileImage" src="./images/blue-circle-with-white-user_78370-4707.avif" alt="صورة الحساب" />
+          <label for="uploadImage" class="upload-label"><i class="fas fa-camera"></i></label>
+          <input type="file" id="uploadImage" accept="image/*" hidden />
+        </div>
+        <p class="avatar-note">الصورة الشخصية تظهر في كل الأقسام</p>
+      </div>
+
+      <form id="accountForm" class="account-form">
+        <div class="form-group">
+          <label>الاسم الكامل</label>
+          <input type="text" id="fullName" placeholder="أدخل اسمك الكامل" required />
+        </div>
+
+        <div class="form-group">
+          <label>البريد الإلكتروني</label>
+          <input type="email" id="email" placeholder="example@email.com" required />
+        </div>
+
+        <div class="form-group">
+          <label>كلمة المرور الجديدة</label>
+          <input type="password" id="newPassword" placeholder="اتركها فارغة إذا لا تريد تغييرها" />
+        </div>
+
+        <div class="form-group">
+          <label>تاريخ الانضمام</label>
+          <input type="text" id="joinDate" disabled value="2024-04-19" />
+        </div>
+
+        <button type="submit" class="save-btn"><i class="fas fa-save"></i> حفظ التغييرات</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="./js/account.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>تسجيل الدخول / إنشاء حساب</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/auth (1).css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #00b894, #0984e3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      direction: rtl;
+    }
+    .auth-container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #0984e3;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .btn {
+      width: 100%;
+      background: #00b894;
+      color: white;
+      padding: 12px;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .switch-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+    }
+    .error-msg {
+      background: #ffe0e0;
+      color: #d63031;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container" id="loginForm">
+    <h2>تسجيل الدخول</h2>
+    <div class="error-msg" id="loginError">❌ البريد أو كلمة المرور غير صحيحة</div>
+    <div class="form-group"><input type="email" id="loginEmail" placeholder="📧 البريد الإلكتروني" /></div>
+    <div class="form-group"><input type="password" id="loginPassword" placeholder="🔒 كلمة المرور" /></div>
+    <button class="btn" onclick="login()">دخول</button>
+    <div class="switch-link" onclick="showRegister()">لا تملك حسابًا؟ أنشئ حساب</div>
+  </div>
+
+  <div class="auth-container" id="registerForm" style="display:none;">
+    <h2>إنشاء حساب جديد</h2>
+    <div class="error-msg" id="registerError">⚠️ تأكد من تعبئة كل الحقول</div>
+    <div class="form-group"><input type="text" id="regName" placeholder="👤 الاسم الكامل" /></div>
+    <div class="form-group"><input type="email" id="regEmail" placeholder="📧 البريد الإلكتروني" /></div>
+    <div class="form-group"><input type="password" id="regPass" placeholder="🔒 كلمة المرور" /></div>
+    <div class="form-group"><input type="password" id="regConfirm" placeholder="✅ تأكيد كلمة المرور" /></div>
+    <div class="form-group"><input type="tel" id="regPhone" placeholder="📱 رقم الواتساب" /></div>
+    <button class="btn" onclick="register()">تسجيل</button>
+    <div class="switch-link" onclick="showLogin()">لديك حساب بالفعل؟ تسجيل الدخول</div>
+  </div>
+
+  <script src="./js/auth-render.js"></script>
+</body>
+</html>

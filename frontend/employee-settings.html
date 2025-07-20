@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>إعدادات الموظف</title>
+  <link rel="stylesheet" href="./css/settings-employee.css" />
+  <link rel="stylesheet" href="./css/styles-final.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ✅ زر فتح القائمة الجانبية -->
+<button id="menuToggle" class="menu-toggle">☰</button>
+
+<!-- ✅ القائمة الجانبية -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <h3>لوحة الموظف</h3>
+  <a href="./employee-dashboard.html"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="./employee-orders.html"><i class="fas fa-tasks"></i> الطلبات</a>
+  <a href="./employee-messages.html"><i class="fas fa-comments"></i> المحادثات</a>
+  <a href="./employee-notifications.html"><i class="fas fa-bell"></i> الإشعارات</a>
+  <a href="./settings-employee.html" class="active"><i class="fas fa-cog"></i> الإعدادات</a>
+  <a href="./logout.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+</div>
+
+<!-- ✅ تبويبات الإعدادات -->
+<main class="settings-container">
+  <h1>الإعدادات</h1>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="edit">⚙️ تعديل البيانات</button>
+    <button class="tab-btn" data-tab="profile">👤 الملف الشخصي</button>
+    <button class="tab-btn" data-tab="stats">📊 تقارير الأداء</button>
+  </div>
+
+  <!-- ✅ تبويب تعديل البيانات -->
+  <div id="tab-edit" class="tab-content show">
+    <div class="avatar-section">
+      <div class="avatar-wrapper">
+        <img src="default-avatar.png" alt="صورة الموظف" id="profileImage"/>
+        <label for="avatarUpload" class="upload-label"><i class="fas fa-camera"></i></label>
+        <input type="file" id="avatarUpload" hidden />
+      </div>
+      <p class="avatar-note">اضغط لتغيير الصورة الشخصية</p>
+    </div>
+
+    <form class="settings-form">
+      <div class="form-group">
+        <label for="fullName">الاسم الكامل</label>
+        <input type="text" id="fullName" placeholder="محمد الساعدي" />
+      </div>
+      <div class="form-group">
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" placeholder="employee@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="password">كلمة المرور الجديدة</label>
+        <input type="password" id="password" placeholder="********" />
+      </div>
+      <div class="form-group">
+        <label for="status">الحالة</label>
+        <select id="status">
+          <option value="online">متاح</option>
+          <option value="busy">مشغول</option>
+          <option value="offline">غير متصل</option>
+        </select>
+      </div>
+      <button type="submit" class="save-btn">💾 حفظ التغييرات</button>
+    </form>
+  </div>
+
+  <!-- ✅ تبويب الملف الشخصي -->
+  <div id="tab-profile" class="tab-content">
+    <div class="avatar-section">
+      <div class="avatar-wrapper">
+        <img src="default-avatar.png" alt="صورة الموظف" />
+      </div>
+      <p class="avatar-note">محمد الساعدي</p>
+    </div>
+    <div class="settings-form readonly">
+      <div class="form-group">
+        <label>البريد الإلكتروني</label>
+        <input type="text" value="employee@example.com" disabled />
+      </div>
+      <div class="form-group">
+        <label>تاريخ الانضمام</label>
+        <input type="text" value="2024-08-01" disabled />
+      </div>
+      <div class="form-group">
+        <label>الحالة</label>
+        <input type="text" value="متاح" disabled />
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ تبويب تقارير الأداء -->
+  <div id="tab-stats" class="tab-content">
+    <div class="stats-box">
+      <div class="stat-card"><i class="fas fa-check-circle"></i><h3>25</h3><p>طلبات مكتملة</p></div>
+      <div class="stat-card"><i class="fas fa-clock"></i><h3>12 ساعة</h3><p>متوسط الوقت</p></div>
+      <div class="stat-card"><i class="fas fa-star"></i><h3>4.8</h3><p>متوسط التقييم</p></div>
+    </div>
+  </div>
+</main>
+
+<script>
+  // ✅ التحكم بالتبويبات
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // إزالة التفعيل عن جميع الأزرار
+    tabButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // إخفاء كل التبويبات
+    tabContents.forEach(tc => tc.classList.remove("show"));
+    
+    // إظهار التبويب المحدد
+    const tabId = "tab-" + btn.dataset.tab;
+    document.getElementById(tabId)?.classList.add("show");
+  });
+});
+
+</script>
+
+<script src="./js/settings-employee.js"></script>
+</body>
+</html>

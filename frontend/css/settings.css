@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ✅ تحسين مظهر الشريط العلوي */
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* يجعل النص في الوسط أفقياً */
+    z-index: 1200;
+    height: 60px;
+}
+
+
+
+
+/* سلايدر التبويبات */
+.tabs-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    z-index: 999;
+}
+
+.tabs {
+    margin-top: 17px;
+    display: flex;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+/* تصميم الأزرار في التبويبات */
+.tab-btn {
+    flex: 0 0 auto;
+    background: white;
+    color: black;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    background: #0056b3;
+    color: white;
+}
+/* إخفاء جميع التبويبات عند بدء التشغيل */
+.tab-content {
+    display: none;
+}
+
+/* إظهار التبويب النشط فقط */
+.tab-content.active {
+    display: block;
+}
+
+/* تأكيد أن المحتوى لا يتأثر بالهيدر والتبويبات */
+.content {
+
+    margin-top: 130px;
+    padding: 20px;
+}
+
+/* إخفاء شريط التمرير */
+.tabs-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* تصميم عام للكارد */
+.settings-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: right;
+}
+
+/* تنسيق الحقول */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+
+
+

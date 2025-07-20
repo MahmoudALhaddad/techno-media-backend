@@ -1,0 +1,54 @@
+
+<!-- الإعدادات العامة -->
+<div id="general" class="tab-content active">
+  <div class="settings-card">
+    <h2>⚙️ الإعدادات العامة</h2>
+
+    <!-- تغيير اسم الموقع -->
+    <div class="form-group">
+      <label for="siteName">🏷️ اسم الموقع:</label>
+      <input type="text" id="siteName" value="موقعي الإلكتروني" class="input-field">
+    </div>
+
+    <!-- وصف الموقع -->
+    <div class="form-group">
+      <label for="siteDescription">📝 وصف الموقع:</label>
+      <textarea id="siteDescription" rows="3" class="input-field">موقع يقدم خدمات احترافية...</textarea>
+    </div>
+
+    <!-- تغيير شعار الموقع -->
+    <div class="form-group">
+      <label for="logoUpload">🖼️ شعار الموقع:</label>
+      <div class="logo-preview-container">
+        <img id="logoPreview" src="default-logo.png" alt="معاينة الشعار" width="120">
+      </div>
+      <input type="file" id="logoUpload" class="input-file">
+    </div>
+
+    <!-- الألوان -->
+    <div class="form-group">
+      <label for="primaryColor">🎨 اللون الرئيسي:</label>
+      <input type="color" id="primaryColor" value="#00b894">
+    </div>
+
+    <!-- اللغة الافتراضية -->
+    <div class="form-group">
+      <label for="defaultLanguage">🌐 اللغة الافتراضية:</label>
+      <select id="defaultLanguage" class="input-field">
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+    <!-- روابط التواصل -->
+    <div class="form-group">
+      <label>🔗 روابط التواصل الاجتماعي:</label>
+      <input type="url" placeholder="رابط فيسبوك" class="input-field">
+      <input type="url" placeholder="رابط واتساب" class="input-field">
+      <input type="url" placeholder="رابط إنستغرام" class="input-field">
+    </div>
+
+    <!-- زر الحفظ -->
+    <button type="button" class="save-btn">💾 حفظ التعديلات</button>
+  </div>
+</div>
