@@ -86,10 +86,29 @@
     <div class="form-group"><input type="password" id="regPass" name="password" placeholder="🔒 كلمة المرور" /></div>
     <div class="form-group"><input type="password" id="regConfirm" name="confirmPass" placeholder="✅ تأكيد كلمة المرور" /></div>
     <div class="form-group"><input type="tel" id="regPhone" name="phone"placeholder="📱 رقم الواتساب" /></div>
-    <button class="btn" onclick="register()">تسجيل</button>
+    <button class="btn" type="submit">تسجيل</button>
     <div class="switch-link" onclick="showLogin()">لديك حساب بالفعل؟ تسجيل الدخول</div>
   </form>
 
   <script src="../js/auth-render.js" ></script>
+    <div class="form-group"><input type="email" id="loginEmail"  placeholder="📧 البريد الإلكتروني" /></div>
+    <div class="form-group"><input type="password" id="loginPassword" placeholder="🔒 كلمة المرور" /></div>
+    <button class="btn" type="submit">دخول</button>
+    <div class="switch-link" onclick="showRegister()">لا تملك حسابًا؟ أنشئ حساب</div>
+  </form>
+  <form class="auth-container" id="registerForm" style="display:none;" action="/userRegister" method="post">
+    <h2>إنشاء حساب جديد</h2>
+    <div class="error-msg" id="registerError">⚠️ تأكد من تعبئة كل الحقول</div>
+    <div class="form-group"><input type="text" id="regName"name="fullname" placeholder="👤 الاسم الكامل" /></div>
+    <div class="form-group"><input type="email" id="regEmail" name="email" placeholder="📧 البريد الإلكتروني" /></div>
+    <div class="form-group"><input type="password" id="regPass" name="password" placeholder="🔒 كلمة المرور" /></div>
+    <div class="form-group"><input type="password" id="regConfirm" name="confirmPass" placeholder="✅ تأكيد كلمة المرور" /></div>
+    <div class="form-group"><input type="tel" id="regPhone" name="phone" placeholder="📱 رقم الواتساب" /></div>
+    <button class="btn"type="submit">تسجيل</button>
+    
+    <div class="switch-link" onclick="showLogin()">لديك حساب بالفعل؟ تسجيل الدخول</div>
+  </form>
+
+  <script src="../js/auth-render.js"></script>
 </body>
 </html>
