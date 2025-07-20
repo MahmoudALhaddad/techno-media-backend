@@ -6,7 +6,8 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 const db = new pg.Client({
-  connectionString: process.env.DATABASE_URL || "postgresql://technomedia_user:H8OfhJCryXZ3PpL9HnFyNxjKgRVuAdvF@dpg-d1u0gkqdbo4c73e33sfg-a/technomedia",
+  connectionString: process.env.DATABASE_URL || 
+  "postgresql://technomedia_user:H8OfhJCryXZ3PpL9HnFyNxjKgRVuAdvF@dpg-d1u0gkqdbo4c73e33sfg-a/technomedia",
   ssl: { rejectUnauthorized: false }
 });
 
