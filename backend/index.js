@@ -35,22 +35,26 @@ app.get("/", (req, res) => {
 });
 app.post("/userRegister", async(req,res)=>{
     try {
-        const { email, password, fname, lname } = req.body;
+        const { email, password , confirmPass, fullname , phoneNumber} = req.body;
 
         const dbEmail = await db.query("SELECT email FROM users WHERE email = $1",[email]);
+        if(password === confirmPass){
+            if(dbEmail.rows.length === 0){
 
-        if(dbEmail.rows.length === 0){
-
-            await db.query(
-            "INSERT INTO users (email, password, fname, lname) VALUES ($1,$2,$3,$4)",
-            [email, password, fname, lname]
-            )
-            //return page 
-            return res.status(201).json({ message: "The account has been saved." });
+                await db.query(
+                "INSERT INTO users (email, password, fullname, phone) VALUES ($1,$2,$3,$4)",
+                [email, password, fullname, phoneNumber]
+                )
+                //return page 
+                return res.status(201).json({ message: "The account has been saved." });
+            }else{
+                //redirect to registerpage
+                return res.status(409).json({ message: "The account already exists." });
+            }
         }else{
-            //redirect to registerpage
-            return res.status(409).json({ message: "The account already exists." });
+            return res.status(409).json({ message: "your password does not match" });
         }
+        
         
     } catch (error) {
         console.error(error);
