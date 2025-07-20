@@ -78,7 +78,7 @@
     <button class="btn" type="submit">دخول</button>
     <div class="switch-link" onclick="showRegister()">لا تملك حسابًا؟ أنشئ حساب</div>
   </form>
-  <div class="auth-container" id="registerForm" style="display:none;">
+  <form class="auth-container" id="registerForm" style="display:none;" action="/userRegister" method="post">
     <h2>إنشاء حساب جديد</h2>
     <div class="error-msg" id="registerError">⚠️ تأكد من تعبئة كل الحقول</div>
     <div class="form-group"><input type="text" id="regName" placeholder="👤 الاسم الكامل" /></div>
@@ -86,10 +86,10 @@
     <div class="form-group"><input type="password" id="regPass" placeholder="🔒 كلمة المرور" /></div>
     <div class="form-group"><input type="password" id="regConfirm" placeholder="✅ تأكيد كلمة المرور" /></div>
     <div class="form-group"><input type="tel" id="regPhone" placeholder="📱 رقم الواتساب" /></div>
-    <button class="btn" onclick="register()">تسجيل</button>
+    <button class="btn"type="submit">تسجيل</button>
     <div class="switch-link" onclick="showLogin()">لديك حساب بالفعل؟ تسجيل الدخول</div>
-  </div>
+  </form>
 
-  <script src="./js/auth-render.js"></script>
+  <script src="../js/auth-render.js"></script>
 </body>
 </html>
